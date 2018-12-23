@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .box{
+        font-size: 12px;
+    }
+    /**方法一*/
+    /*.box .input{ !*当字体为12px(注意其他字体大于12不会出现)时复选框和单选框会出现错位方法一就是使用text-bottom+margin-bottom*/
+    /*来实现组中*!*/
+        /*vertical-align: text-bottom;*/
+        /*margin-bottom:2px;*/
+    /*}*/
+    /**方法二以text-top为基础*/
+    /*.box .input{*/
+        /*vertical-align:text-top;*/
+        /*margin-top: 0;*/
+        /*height:13px;*/
+
+    /*}*/
+    /**方法三以以vertical-align：bottom为基础*/
+    /*.box .input*/
+    /*{*/
+        /*height: 15px;*/
+        /*vertical-align: bottom;*/
+        /*margin-bottom:3px;*/
+        /*margin-top: -1px;*/
+    /*}*/
+    /**方法三就是以vertical-align:middle 注意这里不管是以什么为基础都需要我们去通过margin-top和margin-bottom来细调*/
+    .box .input{
+        svertical-align: middle;;
+        margin-top: -2px;
+        margin-bottom: 1px;
+    }
+</style>
+<body>
+    <div class="box">
+        <input type="checkbox" class="input"/>复选框
+        <input type="radio" class="input"/>单选框
+    </div>
+</body>
+</html>
